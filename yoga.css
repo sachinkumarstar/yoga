@@ -1,0 +1,565 @@
+/* cardboard images  */
+
+
+body {
+    background-color: #eee;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    /* min-width: 400px; */
+    height: 300px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    margin: 30px;
+}
+
+.image {
+    height: 60%;
+}
+
+.text_container {
+    position: absolute;
+    top: 55%;
+    left: -5px;
+    height: 65%;
+    width: 108%;
+    background-image: linear-gradient(0deg, #3f5efb, #fc466b);
+    border-radius: 30px;
+    transform: skew(19deg, -9deg);
+}
+
+.text_container:hover {
+    background-image: linear-gradient(0deg, #fc466b, #3f5efb);
+}
+
+
+.second .text_container {
+    background-image: linear-gradient(-20deg, #bb7413, #e7d25c);
+}
+
+.second .text_container:hover {
+    background-image: linear-gradient(-20deg, #e7d25c, #bb7413);
+}
+
+.logo {
+    height: 20%;
+    width: 20%;
+    border-radius: 20px;
+    background-color: #fff;
+    position: absolute;
+    left: 30px;
+    bottom: 30%;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.7);
+}
+
+.logo img {
+    height: 100%;
+}
+
+.main_text {
+    position: absolute;
+    color: #fff;
+    font-weight: 900;
+    left: 60%;
+    bottom: 26%;
+}
+
+.card_btn {
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    right: 10%;
+    bottom: 10%;
+    padding: 10px 20px;
+    /* border: 1px solid #fff; */
+    animation: animate 2s ease 0s infinite normal forwards;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.card_btn:hover {
+    animation: none;
+}
+
+.card_btn a {
+    color: #fff;
+}
+
+.date {
+    position: absolute;
+    color: #fff;
+    left: 0%;
+    bottom: 10%;
+}
+
+
+
+
+/* carousel Yoga start here   */
+.as {
+   text-decoration: none;
+}
+
+
+/* 
+.maina {
+    position: relative;
+    width: 100%;
+    color: #fff;
+    height: 100vh;
+}
+
+.maina .slider {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.maina .slider .slides {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.maina .slider .slides.current {
+    z-index: 1;
+    opacity: 1;
+}
+
+.maina .slider .slides:nth-child(1) {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://yogapractice.com/wp-content/uploads/2019/04/What-is-Vinyasa-Yoga-Everything-You-Need-to-Know-1.jpg');
+
+    background-attachment: auto;
+    max-height: 100%;
+    min-height: 50%;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: center;
+
+
+
+}
+
+.maina .slider .slides:nth-child(2) {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://ayushayurved.com/wp-content/uploads/2023/02/Yoga-Pose-PNG-Background-Photo.png');
+    background-size: auto;
+    background-attachment: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.maina .slider .slides:nth-child(3) {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://cosmickids.com/wp-content/uploads/2021/01/HappyBaby-1024x683.png');
+    background-size: cover;
+    background-attachment: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.maina .slider .slides:nth-child(4) {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("https://brisbanerooftopyoga.com/wp-content/uploads/2021/01/Untitled-design.png");
+    background-size: auto;
+    height: 100%;
+    background-attachment: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.maina .slider .slides:nth-child(5) {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("imgy/y1.jpg");
+    background-size: auto;
+
+    background-attachment: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.maina .slider .slides h1 {
+    font-size: 3em;
+    font-weight: 600;
+    text-shadow: 0px 0.5px 12px rgba(0, 0, 0, 0.9);
+    margin-left: -500%;
+    transition: 0.3s linear;
+}
+
+.maina .slider .slides.current h1 {
+    animation: animateHeading 0.3s linear forwards 1;
+    animation-delay: 0.2s;
+}
+
+@keyframes animateHeading {
+    to {
+        margin-left: 0;
+    }
+}
+
+.maina .slider .slides p {
+    text-shadow: 0px 0.5px 5px rgba(0, 0, 0, 0.5);
+    margin-right: -500%;
+    transition: 0.3s linear;
+}
+
+.maina .slider .slides.current p {
+    animation: animateparagraph 0.3s linear forwards 1;
+    animation-delay: 0.2s;
+}
+
+@keyframes animateparagraph {
+    to {
+        margin-right: 0;
+    }
+}
+
+.maina .prev {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 99;
+    font-size: 1.5em;
+    font-weight: 600;
+    border: 2px solid #fff;
+    padding: 10px 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.9);
+}
+
+.maina .next {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    z-index: 99;
+    font-size: 1.5em;
+    font-weight: 600;
+    border: 2px solid #fff;
+    padding: 10px 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.maina .prev:hover,
+.maina .next:hover {
+    background: #a0641600;
+    border-color: #16a085;
+}
+
+.maina a {
+    position: absolute;
+    color: #fff;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    font-size: 1em;
+    font-weight: 500;
+    border: 1px solid #16a;
+    padding: 10px 17px;
+    line-height: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    background: #16a;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.maina a:hover {
+    background: #017fb5;
+} */
+
+/* carousel end here  */
+
+/* Testomonial start Here  */
+.heading {
+    position: relative;
+}
+
+.testimonials {
+    background: url("https://wallpaperaccess.com/full/1642644.jpg") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 130px 0 150px;
+    color: #ffffff;
+    position: relative;
+}
+
+.testimonials:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    left: 0;
+}
+
+.testimonials .heading h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.testimonials .heading h2 span {
+    color: #ff0000;
+}
+
+.testimonials p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #d1e5e7;
+    margin: 20px 0;
+    padding: 0;
+}
+
+/* Image */
+.testimonials .carousel-inner .carousel-item .team {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ff0000;
+    border-radius: 100%;
+    padding: 5px;
+    margin: 50px 0 15px;
+}
+
+.testimonials .carousel-inner .carousel-item h3 {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.testimonials .carousel-inner .carousel-item h4 {
+    font-size: 14px;
+    font-weight: 300;
+    color: #e2e1e1;
+    margin-bottom: 20px;
+}
+
+.testimonials .carousel-indicators {
+    bottom: -30px;
+}
+
+.testimonials .carousel-indicators li {
+    background-color: #b8b7b7;
+    border-radius: 30px;
+    height: 4px;
+    width: 40px;
+}
+
+.testimonials .carousel-indicators .active {
+    background-color: #ff0000;
+}
+
+.testimonials .control span {
+    cursor: pointer;
+}
+
+.testimonials .icon {
+    height: 40px;
+    width: 40px;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    font-size: 30px;
+    background-image: none;
+    color: #ffffff;
+}
+
+/* End Testimonial  */
+
+.wrapper {
+    width: 200px;
+    height: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 15%;
+    transform-origin: 50%;
+    animation: circle7124 .5s alternate infinite ease;
+}
+
+@keyframes circle7124 {
+    0% {
+        top: 60px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+    }
+
+    40% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+.circle:nth-child(2) {
+    left: 45%;
+    animation-delay: .2s;
+}
+
+.circle:nth-child(3) {
+    left: auto;
+    right: 15%;
+    animation-delay: .3s;
+}
+
+.shadow {
+    width: 20px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 62px;
+    transform-origin: 50%;
+    z-index: -1;
+    left: 15%;
+    filter: blur(1px);
+    animation: shadow046 .5s alternate infinite ease;
+}
+
+@keyframes shadow046 {
+    0% {
+        transform: scaleX(1.5);
+    }
+
+    40% {
+        transform: scaleX(1);
+        opacity: .7;
+    }
+
+    100% {
+        transform: scaleX(.2);
+        opacity: .4;
+    }
+}
+
+.shadow:nth-child(4) {
+    left: 45%;
+    animation-delay: .2s
+}
+
+.shadow:nth-child(5) {
+    left: auto;
+    right: 15%;
+    animation-delay: .3s;
+}
+
+/* Cards Button  */
+button {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.9rem 2rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 500;
+    font-size: 15px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: #66ff66;
+    color: ghostwhite;
+}
+
+button span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+button:hover span {
+    color: black;
+}
+
+button::before,
+button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+button::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+button:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
